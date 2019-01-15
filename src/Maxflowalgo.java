@@ -7,62 +7,62 @@ import java.util.Set;
  
 public class Maxflowalgo
 {
-	public final static int NODE_NUM = 130;
-        private int[] parent;
-        private Queue<Integer> queue;
-        private int numberOfVertices;
-        private boolean[] visited;
-        private static Set<Pair> cutSet;
-        private ArrayList<Integer> reachable;
-        private ArrayList<Integer> unreachable;
-	public final static int WORKER_NUM = 130; //1 server and 3 clients
-	//client 
-	public final static int[] w1 = {10,8,4}; //w_x of host x  //網路成本 $1/MB 
-	public final static int[] k1 = {2,1,1};  //k_x of host x  //計算成本 $1/second
-	public final static int[] w2 = {26,8,4}; 
-	public final static int[] k2 = {1,1,1}; 
-	public final static int[] w3 = {50,8,4}; 
-	public final static int[] k3 = {1,2,2};
-	//server
-	public final static int[] w4 = {12,8,4}; 
-	public final static int[] k4 = {1,1,2};
+    public final static int NODE_NUM = 130;
+    private int[] parent;
+    private Queue<Integer> queue;
+    private int numberOfVertices;
+    private boolean[] visited;
+    private static Set<Pair> cutSet;
+    private ArrayList<Integer> reachable;
+    private ArrayList<Integer> unreachable;
+    public final static int WORKER_NUM = 130; //1 server and 3 clients
+    //client 
+    public final static int[] w1 = {10,8,4}; //w_x of host x  //網路成本 $1/MB 
+     public final static int[] k1 = {2,1,1};  //k_x of host x  //計算成本 $1/second
+    public final static int[] w2 = {26,8,4}; 
+    public final static int[] k2 = {1,1,1}; 
+    public final static int[] w3 = {50,8,4}; 
+    public final static int[] k3 = {1,2,2};
+    //server
+    public final static int[] w4 = {12,8,4}; 
+    public final static int[] k4 = {1,1,2};
 	
-	    //client1
-		//w ; n_i of node i
-		public static int[] n1 = {//檔案大小
-				1,2,3,4,5,6,7,8,
-				1,2,3,4,5,6,7,8} ;
-		//k ; c_i of node i
-		public static int[] c1 = { //工作時間
-				1,2,3,4,5,6,7,8,
-				1,2,3,4,5,6,7,8};	
+        //client1
+	//w ; n_i of node i
+	public static int[] n1 = {//檔案大小
+		1,2,3,4,5,6,7,8,
+		1,2,3,4,5,6,7,8} ;
+	//k ; c_i of node i
+	public static int[] c1 = { //工作時間
+		1,2,3,4,5,6,7,8,
+		1,2,3,4,5,6,7,8};	
+	
+	//client2
+	public static int[] n2 = {
+		1,6,2,6,3,6,4,6,
+		6,1,6,2,6,3,6,4} ;
 		
-		//client2
-		public static int[] n2 = {
-				1,6,2,6,3,6,4,6,
-				6,1,6,2,6,3,6,4} ;
-		
-		public static int[] c2 = {
-				6,1,6,1,6,1,6,1,
-				6,7,9,9,8,9,2,9} ;
+	public static int[] c2 = {
+		6,1,6,1,6,1,6,1,
+		6,7,9,9,8,9,2,9} ;
 			
-		//client3
-		public static int[] n3 = {
-				1,2,3,4,5,6,7,8,
-				1,2,3,4,5,6,7,8} ;
+	//client3
+	public static int[] n3 = {
+		1,2,3,4,5,6,7,8,
+		1,2,3,4,5,6,7,8} ;
 
-		public static int[] c3 = {
-				1,2,3,4,5,6,7,8,
-				1,2,3,4,5,6,7,8} ;
+	public static int[] c3 = {
+		1,2,3,4,5,6,7,8,
+		1,2,3,4,5,6,7,8} ;
 
-		//server
-		public static int[] n4 = {
-				1,2,3,4,5,6,7,8,
-				9,8,7,6,5,4,7,1} ;
+	//server
+	public static int[] n4 = {
+		1,2,3,4,5,6,7,8,
+		9,8,7,6,5,4,7,1} ;
 		
-		public static int[] c4 = {
-				1,2,3,4,5,6,7,8,
-				9,2,8,4,5,6,5,1} ;
+	public static int[] c4 = {
+		1,2,3,4,5,6,7,8,
+		9,2,8,4,5,6,5,1} ;
 	
     public Maxflowalgo (int numberOfVertices)
     {
