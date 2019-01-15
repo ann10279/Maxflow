@@ -6,6 +6,5 @@ https://graphviz.gitlab.io/_pages/Download/Download_windows.html
 
 ![image](https://github.com/ann10279/Maxflow/blob/master/Figure1.png?raw=true)
 
-
-
+![image](https://github.com/ann10279/Maxflow/blob/master/Figure2.png?raw=true)
 
