@@ -8,17 +8,17 @@ import java.util.Set;
 public class Maxflowalgo
 {
 	public final static int NODE_NUM = 130;
-    private int[] parent;
-    private Queue<Integer> queue;
-    private int numberOfVertices;
-    private boolean[] visited;
-    private static Set<Pair> cutSet;
-    private ArrayList<Integer> reachable;
-    private ArrayList<Integer> unreachable;
+        private int[] parent;
+        private Queue<Integer> queue;
+        private int numberOfVertices;
+        private boolean[] visited;
+        private static Set<Pair> cutSet;
+        private ArrayList<Integer> reachable;
+        private ArrayList<Integer> unreachable;
 	public final static int WORKER_NUM = 130; //1 server and 3 clients
 	//client 
-	public final static int[] w1 = {10,8,4}; //w_x of host x  //ºô¸ô¦¨¥» $1/MB 
-	public final static int[] k1 = {2,1,1};  //k_x of host x  //­pºâ¦¨¥» $1/second
+	public final static int[] w1 = {10,8,4}; //w_x of host x  //ç¶²è·¯æˆæœ¬ $1/MB 
+	public final static int[] k1 = {2,1,1};  //k_x of host x  //è¨ˆç®—æˆæœ¬ $1/second
 	public final static int[] w2 = {26,8,4}; 
 	public final static int[] k2 = {1,1,1}; 
 	public final static int[] w3 = {50,8,4}; 
@@ -29,11 +29,11 @@ public class Maxflowalgo
 	
 	    //client1
 		//w ; n_i of node i
-		public static int[] n1 = {//ÀÉ®×¤j¤p
+		public static int[] n1 = {//æª”æ¡ˆå¤§å°
 				1,2,3,4,5,6,7,8,
 				1,2,3,4,5,6,7,8} ;
 		//k ; c_i of node i
-		public static int[] c1 = { //¤u§@®É¶¡
+		public static int[] c1 = { //å·¥ä½œæ™‚é–“
 				1,2,3,4,5,6,7,8,
 				1,2,3,4,5,6,7,8};	
 		
